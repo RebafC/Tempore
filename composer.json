@@ -1,0 +1,13 @@
+{
+  "name": "rebafc/tempore",
+  "description": "Mutual cron monitoring system",
+  "require": {
+    "php": "^8.2",
+    "twig/twig": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tempore\\": "src/"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tempore Dashboard</title>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; }
+        .healthy { color: green; }
+        .stale, .unreachable { color: red; }
+        .summary { margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+<h1>Tempore Dashboard</h1>
+
+<p><strong>Monitoring Peer:</strong> {{ peer_url }}</p>
+<p><strong>Peer Last Heartbeat:</strong> {{ peer_last_heartbeat }}
+    <span class="{{ peer_status|lower }}">{{ peer_status }}</span></p>
+
+<p><strong>Sending Heartbeat To Peer:</strong> {{ local_heartbeat_url }}</p>
+<p><strong>Last Local Heartbeat:</strong> {{ local_last_heartbeat }}</p>
+
+<div class="summary">
+    <h2>Status Summary</h2>
+    <ul>
+        <li><strong>Heartbeat Tolerance:</strong> {{ heartbeat_tolerance }} seconds</li>
+        <li><strong>Alert Method:</strong> {{ alert_method }}</li>
+        <li><strong>Last Alert:</strong> {{ last_alert ?: 'No recent alerts' }}</li>
+    </ul>
+</div>
+
+</body>
+</html>
